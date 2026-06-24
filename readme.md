@@ -72,8 +72,8 @@ div.box{
 
 <h3>Figures Description and Regeneration Instructions</h3>
 
-The figures from the corresponding paper are listed in the second column of $\mathbf{Table~2}$.  
-They were generated using $\mathbf{MATLAB~R2024b}$.  <br>
+The figures from the corresponding paper are listed in the second column of Table 2.  
+They were generated using MATLAB R2024b.  <br>
 <br>
 To regenerate the figures, follow these steps:  <br>
 1. Open MATLAB.  <br>
@@ -81,7 +81,7 @@ To regenerate the figures, follow these steps:  <br>
 3. Run the `main()` function in the MATLAB command window.  <br>
 <br>
 The `main()` function accepts up to three input arguments $(i_1, i_2, i_3)$, which are defined separately for each figure.  
-Refer to the fourth column of $\mathbf{Table 2}$ for the required input arguments to reproduce each figure.  
+Refer to the fourth column of Table 2 for the required input arguments to reproduce each figure. Figures labeled 1S–6S correspond to figures in the supplementary material.
 
 
 <table border="1" cellpadding="10" cellspacing="0">
