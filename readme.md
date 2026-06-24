@@ -80,7 +80,7 @@ To regenerate the figures, follow these steps:  <br>
 2. Navigate to the `code` folder.  <br>
 3. Run the `main()` function in the MATLAB command window.  <br>
 <br>
-The `main()` function accepts up to three input arguments \((i_1, i_2, i_3)\), which are defined separately for each figure.  
+The `main()` function accepts up to three input arguments \(i_1, i_2, i_3\), which are defined separately for each figure.  
 Refer to the fourth column of Table 2 for the required input arguments to reproduce each figure. Figures labeled 1S–6S correspond to figures in the supplementary material.
 
 
