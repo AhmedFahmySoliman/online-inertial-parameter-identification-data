@@ -73,8 +73,9 @@ div.box{
 <h3>Figures Description and Regeneration Instructions</h3>
 
 The MATLAB code was developed and tested on Ubuntu Linux. Users running the code on Windows may need to replace Unix-style path separators (/) with Windows-compatible paths or use fullfile().
-The figures from the corresponding paper are listed in the second column of Table 2.  
-They were generated using MATLAB R2024b.  <br>
+
+The figures from the corresponding paper are listed in the second column of Table 2.  All figures were generated using MATLAB R2024b.  <br>
+
 <br>
 To regenerate the figures, follow these steps:  <br>
 1. Open MATLAB.  <br>
