@@ -60,7 +60,7 @@ hold off
 end
 
 
-print(gcf, fullfile('../results/supplementary', 'Figure2S.png'), '-dpng','-r300');
+print(gcf, fullfile('../results', 'Figure2S.png'), '-dpng','-r300');
 
 disp('====================================================');
 disp(' Figure saved successfully!');
