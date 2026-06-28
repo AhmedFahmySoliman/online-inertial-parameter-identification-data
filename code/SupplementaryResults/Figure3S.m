@@ -173,7 +173,7 @@ set(gcf,'position',[x0,y0,width,height])
 end
 
 
-print(gcf, fullfile('../results/supplementary', 'Figure3S.png'), '-dpng','-r300');
+print(gcf, fullfile('../results', 'Figure3S.png'), '-dpng','-r300');
 
 disp('====================================================');
 disp(' Figure saved successfully!');
