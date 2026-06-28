@@ -61,7 +61,7 @@ yticks(0:20:40); xticks(5:5:20);
 end
 
 
-print(gcf, fullfile('../results/supplementary', 'Figure1S.png'), '-dpng','-r300');
+print(gcf, fullfile('../results', 'Figure1S.png'), '-dpng','-r300');
 
 disp('====================================================');
 disp(' Figure saved successfully!');
