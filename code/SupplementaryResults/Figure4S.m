@@ -108,7 +108,7 @@ set(gca,'FontName', 'Times New Roman','FontSize', 12,'LineWidth',1)
 hold off
 
 
-print(gcf, fullfile('../results/supplementary', 'Figure4S.png'), '-dpng','-r300');
+print(gcf, fullfile('../results', 'Figure4S.png'), '-dpng','-r300');
 
 disp('====================================================');
 disp(' Figure saved successfully!');
