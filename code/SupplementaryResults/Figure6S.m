@@ -34,7 +34,7 @@ pos = get(ax,'Position');
 set(ax,'Position',[pos(1) pos(2) pos(3)+0.04 pos(4)]);
 
 
-print(gcf, fullfile('../results/supplementary', 'Figure6S.png'), '-dpng','-r300');
+print(gcf, fullfile('../results', 'Figure6S.png'), '-dpng','-r300');
 
 disp('====================================================');
 disp(' Figure saved successfully!');
