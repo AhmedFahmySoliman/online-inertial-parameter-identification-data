@@ -1,5 +1,5 @@
 function Figure7(I2)
-%was Figure 14
+
 load('../data/CompactData/Hardware_Compact_All.mat','Compact')
 
 Data_Prop = Compact.Prop;
