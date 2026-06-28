@@ -1,5 +1,4 @@
 function Figure5(I2, I3)
-%was Figure 9
 
 FolderName = fullfile('..','data');
 
