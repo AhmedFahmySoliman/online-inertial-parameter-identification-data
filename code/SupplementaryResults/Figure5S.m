@@ -118,7 +118,7 @@ x0 = 3500; y0 = 150;
 width = 1850; height = 500;
 set(gcf,'position',[x0,y0,width,height])
 
-print(gcf, fullfile('../results/supplementary', 'Figure5S.png'), '-dpng','-r300');
+print(gcf, fullfile('../results', 'Figure5S.png'), '-dpng','-r300');
 
 disp('====================================================');
 disp(' Figure saved successfully!');
