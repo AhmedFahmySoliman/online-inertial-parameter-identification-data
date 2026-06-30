@@ -83,7 +83,7 @@ To regenerate the figures, follow these steps:  <br>
 3. Run the `main()` function in the MATLAB command window.  <br>
 <br>
 The `main()` function accepts up to three input arguments (`i1`, `i2`, and `i3`), which are defined separately for each figure.  
-Refer to the fourth column of Table 2 for the required input arguments to reproduce each figure. Figures labeled 1S–6S correspond to figures in the supplementary material.
+Refer to the fourth column of Table 2 for the required input arguments to reproduce each figure. Figures labeled 1S–6S correspond to figures in the supplementary material. <p>For convenience, a short guidance video (<code>Guidance_Video.mp4</code>) is included in this repository to demonstrate the figure regeneration process.</p>
 
 
 <table border="1" cellpadding="10" cellspacing="0">
@@ -121,8 +121,15 @@ Refer to the fourth column of Table 2 for the required input arguments to reprod
 
   </tbody>
   </table>
-  <p>$\mathbf{Table 2}$: Description of figures included in the repository. $\mathbf{Column 1:}$ Figure index in the capsule. $\mathbf{Column 2:}$ Description of the figure content. $\mathbf{Column 3:}$ Corresponding figure number in the manuscript or supplementary file. $\mathbf{Column 4:}$ Instructions to run the figure using the $main()$ function, including required input arguments and their constraints. The set {1,2,…,12} denotes the simulated subject index, {80,90,100,110,120,130} denotes the walking velocity in mm/s, and {1,2,3,4} denotes the representative squatting-experiment index.
-  </p>
+  <p><b>Table 2.</b> Description of figures included in the repository.
+<b>Column 1:</b> Figure index in the repository.
+<b>Column 2:</b> Description of the figure content.
+<b>Column 3:</b> Corresponding figure number in the manuscript or supplementary file.
+<b>Column 4:</b> Instructions to run the figure using the <code>main()</code> function, including the required input arguments and their constraints.
+The set <code>{1,2,\dots,12}</code> denotes the simulated subject index,
+<code>{80,90,100,110,120,130}</code> denotes the walking velocity (mm/s),
+and <code>{1,2,3,4}</code> denotes the representative squatting experiment index.
+</p>
 
 <hr>
 <h3> Authors </h3>
