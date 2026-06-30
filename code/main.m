@@ -34,28 +34,18 @@ if nargin == 2
 
     if isequal(i1,7)
 
-        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 30
-            disp('Experiment index should be an integer within 1 and 30.');
+        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 4
+            disp('Experiment index should be an integer within 1 and 4.');
             return;
         end
 
         Figure7(i2);
         return;
 
-    elseif isequal(i1,8)
-
-        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 30
-            disp('Experiment index should be an integer within 1 and 30.');
-            return;
-        end
-
-        Figure8(i2);
-        return;
-
     elseif isequal(i1,9)
 
-        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 30
-            disp('Experiment index should be an integer within 1 and 30.');
+        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 4
+            disp('Experiment index should be an integer within 1 and 4.');
             return;
         end
 
@@ -98,10 +88,10 @@ if nargin == 2
                 disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
                 return;
             end
-            if (ismember(i2,1:30))
+            if (ismember(i2,1:4))
                 Figure5S(i2);
             else
-                disp(['Please enter experiment indexes number from 1 to 30']); 
+                disp(['Please enter experiment indexes number from 1 to 4']); 
                 return;
             end  
             elseif strcmp(i1,'6S')
@@ -109,10 +99,10 @@ if nargin == 2
                 disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
                 return;
             end
-            if (ismember(i2,1:30))
+            if (ismember(i2,1:4))
                 Figure6S(i2);
             else
-                disp(['Please enter experiment indexes number from 1 to 30']); 
+                disp(['Please enter experiment indexes number from 1 to 4']); 
                 return;
             end
     else
