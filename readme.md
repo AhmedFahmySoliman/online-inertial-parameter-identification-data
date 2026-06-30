@@ -102,11 +102,11 @@ Refer to the fourth column of Table 2 for the required input arguments to reprod
 
   <tr><td>3</td><td>Estimated right leg joint torques $\hat{\mathbf{\tau}}$ versus actual torques $\mathbf{\tau}_{act}$ and initial guess torques $\check{\mathbf{\tau}}$.</td><td>5</td><td>$main(i_1,i_2,i_3)$ <br> $i_1 = 5$<br> $i_2 \in \{1,2,\dots,12\} \subset \mathbb{Z}$ <br> $i_3 = [i_{3,1}, i_{3,2}] \in \{80,90,100,110,120,130\}^2 \subset \mathbb{Z}^2$</td></tr>
 
-  <tr><td>4</td><td>Estimated (proposed) right leg null-space-projected joint torques $\tilde{\tau}^{est}$ versus the measured null-space-projected joint torques $\tilde{\tau}^{act}$.</td><td>7</td><td>$main(i_1,i_2)$ <br> $i_1 = 7$ <br> $i_2 \in \{1,2,....,30\}$</td></tr>
+  <tr><td>4</td><td>Estimated (proposed) right leg null-space-projected joint torques $\tilde{\tau}^{est}$ versus the measured null-space-projected joint torques $\tilde{\tau}^{act}$.</td><td>7</td><td>$main(i_1,i_2)$ <br> $i_1 = 7$ <br> $i_2 \in \{1,2,3,4\}$</td></tr>
 
   <tr><td>5</td><td>(a) Experimental robot-joint absolute torque errors. (b) Experimental computation time tc.</td><td>8</td><td>$main(i_1)$ <br> $i_1 = 8$</td></tr>
 
-  <tr><td>6</td><td>Representative hardware experiment convergence. (a) Convergence metric $d_\pi(t)$. (b) Hip-link mass estimate.</td><td>9</td><td>$main(i_1,i_2)$ <br> $i_1 = 9$ <br> $i_2 \in \{1,2,....,30\}$</td></tr>
+  <tr><td>6</td><td>Representative hardware experiment convergence. (a) Convergence metric $d_\pi(t)$. (b) Hip-link mass estimate.</td><td>9</td><td>$main(i_1,i_2)$ <br> $i_1 = 9$ <br> $i_2 \in \{1,2,3,4\}$</td></tr>
 
   <tr><td>7</td><td>Mean $\pm$ SD performance of the identification methods: (a) torque RMSE and (b) computation time.</td><td>10</td><td>$main(i_1)$ <br> $i_1 = 10$</td></tr>
 
@@ -116,16 +116,12 @@ Refer to the fourth column of Table 2 for the required input arguments to reprod
 <tr><td>9</td><td>Relative error $e_{rel}$ for four models walking with different velocities over different simulation runs.</td><td>2S</td><td>$main(i_1,i_2)$ <br> $i_1 = '2S'$ <br> $i_2 = [i_{2,1}, i_{2,2}, i_{2,3}, i_{2,4}] \in \{1,2,\dots,12\}^4 \subset \mathbb{Z}^4$</td></tr>
 <tr><td>10</td><td>Variation of the estimated inertia-tensor eigenvalues and corresponding triangle-inequality conditions during a representative simulation run.</td><td>3S</td><td>$main(i_1,i_2,i_3)$ <br> $i_1 = '3S'$ <br> $i_2 \in \{1,2,....,30\} \subset \mathbb{Z}$ <br> $i_3 \in \{80,90,100,110,120,130\} \subset \mathbb{Z}$</td></tr>
 <tr><td>11</td><td>Estimated masses of the floating base, hip, thigh, shank, and foot $m_{fb}, m_h, m_{th}, m_{sh},$ and $m_f$. Mean ± STD is shown with shaded areas and mean values with solid lines.</td><td>4S</td><td>$main(i_1,i_2)$ <br> $i_1 = '4S'$ <br> $i_2 \in \{1,2,\dots,12\} \subset \mathbb{Z}$ </td></tr>
-<tr><td>12</td><td>Experimental variation in estimated link inertia tensor eigenvalues and triangle inequalities.</td><td>5S</td><td>$main(i_1,i_2)$ <br> $i_1 = '5S'$ <br> $i_2 \in \{1,2,....,30\} \subset \mathbb{Z}$</td></tr>
-<tr><td>13</td><td>Experimental variation in estimated link masses.</td><td>6S</td><td>$main(i_1,i_2)$ <br> $i_1 = '6S'$ <br> $i_2 \in \{1,2,....,30\} \subset \mathbb{Z}$</td></tr>
+<tr><td>12</td><td>Experimental variation in estimated link inertia tensor eigenvalues and triangle inequalities.</td><td>5S</td><td>$main(i_1,i_2)$ <br> $i_1 = '5S'$ <br> $i_2 \in \{1,2,3,4\} \subset \mathbb{Z}$</td></tr>
+<tr><td>13</td><td>Experimental variation in estimated link masses.</td><td>6S</td><td>$main(i_1,i_2)$ <br> $i_1 = '6S'$ <br> $i_2 \in \{1,2,3,4\} \subset \mathbb{Z}$</td></tr>
 
   </tbody>
   </table>
-  <p>$\mathbf{Table 2}$: Description of figures included in the Code Ocean capsule.  
-  $\mathbf{Column 1:}$ Figure index in the capsule.  
-  $\mathbf{Column 2:}$ Description of the figure content.  
-  $\mathbf{Column 3:}$ Corresponding figure number in the manuscript or supplementary file.  
-  $\mathbf{Column 4:}$ Instructions to run the figure using the $main()$ function, including required input arguments and their constraints.
+  <p>$\mathbf{Table 2}$: Description of figures included in the repository. $\mathbf{Column 1:}$ Figure index in the capsule. $\mathbf{Column 2:}$ Description of the figure content. $\mathbf{Column 3:}$ Corresponding figure number in the manuscript or supplementary file. $\mathbf{Column 4:}$ Instructions to run the figure using the $main()$ function, including required input arguments and their constraints. The set {1,2,…,12} denotes the simulated subject index, {80,90,100,110,120,130} denotes the walking velocity in mm/s, and {1,2,3,4} denotes the representative squatting-experiment index.
   </p>
 
 <hr>
