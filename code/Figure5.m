@@ -267,38 +267,4 @@ disp(' Please, display the results by left clicking');
 disp('  "Figure5.png" in the "results" folder.');
 disp('====================================================');
 
-
-% ===== RMSE calculation =====
-
-RMSE_HAA = rms([
-    Tau_HAA_est(t_span,sub,v_1)-Tau_HAA_act(t_span,sub,v_1);
-    Tau_HAA_est(t_span2,sub,v_1)-Tau_HAA_act(t_span2,sub,v_1);
-    Tau_HAA_est(t_span,sub,v_2)-Tau_HAA_act(t_span,sub,v_2);
-    Tau_HAA_est(t_span2,sub,v_2)-Tau_HAA_act(t_span2,sub,v_2)]);
-
-RMSE_HFE = rms([
-    Tau_HFE_est(t_span,sub,v_1)-Tau_HFE_act(t_span,sub,v_1);
-    Tau_HFE_est(t_span2,sub,v_1)-Tau_HFE_act(t_span2,sub,v_1);
-    Tau_HFE_est(t_span,sub,v_2)-Tau_HFE_act(t_span,sub,v_2);
-    Tau_HFE_est(t_span2,sub,v_2)-Tau_HFE_act(t_span2,sub,v_2)]);
-
-RMSE_HK = rms([
-    Tau_HK_est(t_span,sub,v_1)-Tau_HK_act(t_span,sub,v_1);
-    Tau_HK_est(t_span2,sub,v_1)-Tau_HK_act(t_span2,sub,v_1);
-    Tau_HK_est(t_span,sub,v_2)-Tau_HK_act(t_span,sub,v_2);
-    Tau_HK_est(t_span2,sub,v_2)-Tau_HK_act(t_span2,sub,v_2)]);
-
-RMSE_HA = rms([
-    Tau_HA_est(t_span,sub,v_1)-Tau_HA_act(t_span,sub,v_1);
-    Tau_HA_est(t_span2,sub,v_1)-Tau_HA_act(t_span2,sub,v_1);
-    Tau_HA_est(t_span,sub,v_2)-Tau_HA_act(t_span,sub,v_2);
-    Tau_HA_est(t_span2,sub,v_2)-Tau_HA_act(t_span2,sub,v_2)]);
-
-fprintf('\n===== Joint Torque RMSE =====\n');
-fprintf('HAA : %.3f Nm\n',RMSE_HAA);
-fprintf('HFE : %.3f Nm\n',RMSE_HFE);
-fprintf('HK  : %.3f Nm\n',RMSE_HK);
-fprintf('HA  : %.3f Nm\n',RMSE_HA);
-fprintf('Mean: %.3f Nm\n',mean([RMSE_HAA RMSE_HFE RMSE_HK RMSE_HA]));
-
 end
