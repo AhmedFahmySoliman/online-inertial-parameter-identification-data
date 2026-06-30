@@ -19,7 +19,6 @@ end
 t = Figure7Data.Time;
 Tau_act = Figure7Data.Exp(k).Tau_act;
 Tau_est = Figure7Data.Exp(k).Tau_est;
-RMSE_joint = Figure7Data.Exp(k).RMSE_joint;
 
 t0 = Figure7Data.t0;
 tf = Figure7Data.tf;
@@ -136,11 +135,5 @@ disp(' Figure saved successfully!');
 disp(' Please, display the results by left clicking');
 disp('  "Figure7.png" in the "results" folder.');
 disp('====================================================');
-
-fprintf('\n===== Joint Torque RMSE =====\n');
-fprintf('HAA : %.3f Nm\n', RMSE_joint(1));
-fprintf('HFE : %.3f Nm\n', RMSE_joint(2));
-fprintf('HK  : %.3f Nm\n', RMSE_joint(3));
-fprintf('HA  : %.3f Nm\n', RMSE_joint(4));
 
 end
