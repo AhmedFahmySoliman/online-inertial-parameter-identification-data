@@ -1,6 +1,6 @@
 function Figure9(I2, I3)
 
-load('../data/CompactData/Figure9_Hard.mat','Figure9Data')
+load('../data/CompactData/Figure9_Stats.mat','Figure9Data')
 
 sub = I2;
 if length(sub) ~= 1
@@ -43,15 +43,14 @@ if ~isnan(D.Ts_RDPM)
     xline(D.Ts_RDPM, 'b--', 'LineWidth',1.5)
 end
 
-ylim([0 1.5]), xlim([0 13])
+xlim([0 13])
 xlabel('Time [s]', 'Interpreter','latex')
-ylabel('Parameter convergence [-]', 'Interpreter','latex', 'FontSize',24)
+ylabel('Parameter convergence [-]', 'Interpreter','latex')
 
-legend({'Proposed','RSDP','RDPM','$\epsilon_\pi$'}, ...
-        'Interpreter','latex', ...
-        'Location','northeast','NumColumns',1, 'FontSize',24)
+legend({'Proposed','RSDP','RDPM','$\epsilon_\pi$'}, 'Interpreter','latex', 'Location','northeast')
 
-set(gca, 'FontName','Times New Roman', 'FontSize',20, 'LineWidth',1)
+set(gca, 'FontName','Times New Roman', 'FontSize',13, 'LineWidth',1)
+
 %% Right subplot: representative hip mass parameter
 subplot(2,2,2); hold on; grid on; box on
 yyaxis right
@@ -64,7 +63,7 @@ p2 = plot(Time, D.Mass_Prop(:,2), 'color',[0 0.6 0], 'LineWidth',2,'LineStyle','
 p3 = plot(Time, D.Mass_Prop(:,3), 'color','b', 'LineWidth',2,'LineStyle','-');
 p4 = plot(Time, D.Mass_Prop(:,4), 'color',[0.6,0.5,0.05], 'LineWidth',2,'LineStyle','-');
 p5 = plot(Time, D.Mass_Prop(:,5), 'color','k', 'LineWidth',2,'LineStyle','-');
-ylim([0 45]), xlim([0 13])
+ylim([0 40]), xlim([0 13])
 
 xlim([0 13])
 xlabel('Time [s]', 'Interpreter','latex')
@@ -101,46 +100,15 @@ m_sh = Compact.Prop(s).PI(:,40);
 m_f = Compact.Prop(s).PI(:,50);
 
 PI_Prop = Compact.Prop(s).PI;
-PI_RSDP = Compact.RSDP(s).PI;
-PI_RDPM = Compact.RDPM(s).PI;
-
-[Ts_Prop, Conv_Prop] = robust_parameter_settling_time_mod(Time, PI_Prop, eps_err, eps_var, dwell_time, false);
-[Ts_RSDP, Conv_RSDP] = robust_parameter_settling_time_mod(Time, PI_RSDP, eps_err, eps_var, dwell_time, false);
-[Ts_RDPM, Conv_RDPM] = robust_parameter_settling_time_mod(Time, PI_RDPM, eps_err, eps_var, dwell_time, false);
-
-subplot(2,2,3); hold on; grid on; box on
-hold on
-plot(Time, Conv_Prop.err_s, 'color','r',       'LineWidth',2)
-plot(Time, Conv_RSDP.err_s, 'color',[0 0.6 0], 'LineWidth',2)
-plot(Time, Conv_RDPM.err_s, 'color','b',       'LineWidth',2)
-
-yline(eps_err, 'k--', 'LineWidth',1.5)
-
-if ~isnan(Ts_Prop)
-    xline(Ts_Prop, 'r--', 'LineWidth',1.5)
-end
-if ~isnan(Ts_RSDP)
-    xline(Ts_RSDP, '--', 'Color',[0 0.6 0], 'LineWidth',1.5)
-end
-if ~isnan(Ts_RDPM)
-    xline(Ts_RDPM, 'b--', 'LineWidth',1.5)
-end
-ylim([0 4]), xlim([0 13])
-xlabel('Time [s]', 'Interpreter','latex')
-ylabel('Parameter convergence [-]', 'Interpreter','latex','FontSize',24)
-
-legend({'Proposed','RSDP','RDPM','$\epsilon_\pi$'}, ...
-        'Interpreter','latex', ...
-        'Location','northeast', 'FontSize',24,'NumColumns',1)
-
-set(gca, 'FontName','Times New Roman', 'FontSize',20, 'LineWidth',1)
+PI_RSDP = Compact.Prop(s).PI;
+PI_RDPM = Compact.Prop(s).PI;
 
 
-subplot(2,2,4); hold on; grid on; box on
+subplot(2,2,4)
 hold on
 
 yyaxis right
-p1 = plot(Time,m_fb,'r', 'LineStyle','-', 'Marker', 'none','LineWidth',2);
+p1 = plot(Time,m_fb,'r', 'LineStyle','-', 'Marker', 'none','LineWidth',1);
 ylim([0 90])
 ylabel('Floating Base Mass [kg]', 'Interpreter','latex', 'FontSize',24)
 ax = gca;
@@ -149,22 +117,23 @@ ax.YColor = 'r';
 yyaxis left
 ax = gca;
 ax.YColor = 'k';
-p2 = plot(Time,m_h,'color',[0,0.6,0], 'LineStyle','-', 'Marker', 'none','LineWidth',2);
-p3 = plot(Time,m_th,'b', 'LineStyle','-', 'Marker', 'none','LineWidth',2);
-p4 = plot(Time,m_sh,'k', 'LineStyle','-', 'Marker', 'none','LineWidth',2);
-p5 = plot(Time,m_f,'color',[0.6,0.5,0.05], 'LineStyle','-', 'Marker', 'none','LineWidth',2);
-ylabel('Link Masses [kg]', 'Interpreter','latex', 'FontSize',24), xlabel('Time [s]', 'Interpreter','latex', 'FontSize',24)
-legend([p1 p2 p3 p4 p5],{'m_{fb}','m_h','m_{th}','m_{sh}','m_f'},'NumColumns',3, 'FontSize',24);
-xlim([0 14.5]), ylim([0 35])
-set(gca,'FontName', 'Times New Roman','FontSize', 20,'LineWidth',1)
+p2 = plot(Time,m_h,'color',[0,0.6,0], 'LineStyle','-', 'Marker', 'none','LineWidth',1);
+p3 = plot(Time,m_th,'b', 'LineStyle','-', 'Marker', 'none','LineWidth',1);
+p4 = plot(Time,m_sh,'k', 'LineStyle','-', 'Marker', 'none','LineWidth',1);
+p5 = plot(Time,m_f,'color',[0.6,0.5,0.05], 'LineStyle','-', 'Marker', 'none','LineWidth',1);grid on, grid minor, box on
+ylabel('Link Masses [kg]', 'Interpreter','latex', 'FontSize',24), xlabel('Time [s]')
+legend([p1 p2 p3 p4 p5],{'m_{fb}','m_h','m_{th}','m_{sh}','m_f'},'NumColumns',5);
+xlim([0 14]), ylim([0 35])
+set(gca,'FontName', 'Times New Roman','FontSize', 12,'LineWidth',1)
+hold off
 
 subplot(2,2,1),set(gca,'position',[0.059304703476483,0.588104222556988,0.3849044896821,0.37791519491874]);
 subplot(2,2,2),set(gca,'position',[0.50962767003043,0.588104224100151,0.409595233855051,0.377915193375577]);
 subplot(2,2,3),set(gca,'position',[0.061597367000128,0.114267014797825,0.382121212121212,0.376024247338097]);
 subplot(2,2,4),set(gca,'position',[0.508870094272854,0.114267014797825,0.408307819837576,0.37926049329279]);
-set(gcf, 'position', [90     1   1200   954])
+set(gcf, 'position', [90     1   978   954])
 
-saveCurrentFigure('Figure9');
+% saveCurrentFigure('Figure9');
 
 disp('====================================================');
 disp(' Figure saved successfully!');
