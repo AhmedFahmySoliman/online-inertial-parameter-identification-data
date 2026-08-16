@@ -106,7 +106,7 @@ Refer to the fourth column of Table 2 for the required input arguments to reprod
 
   <tr><td>5</td><td>(a) Experimental robot-joint absolute torque errors. (b) Experimental computation time tc.</td><td>8</td><td>$main(i_1)$ <br> $i_1 = 8$</td></tr>
 
-  <tr><td>6</td><td>Representative hardware experiment convergence. (a) Convergence metric $d_\pi(t)$. (b) Hip-link mass estimate.</td><td>9</td><td>$main(i_1,i_2)$ <br> $i_1 = 9$ <br> $i_2 \in \{1,2,3,4\}$</td></tr>
+  <tr><td>6</td><td>Representative simulation and hardware experiments. (a,c) Parameter convergence metric $d_\pi(t)$ , where the dashed lines indicate the settling times within the $\epsilon_{\pi}=0.05$ band. (b,d) Temporal evolution of the floating-base, hip, thigh, shank, and foot masses identified by the proposed method.</td><td>9</td><td>$main(i_1,i_2,i_3)$ <br> $i_1 = 9$ <br> $i_2 \in \{1,2,3,4\}$ <br> $i_3 \in \{1,2,\dots,12\}$</td></tr>
 
   <tr><td>7</td><td>Mean $\pm$ SD performance of the identification methods: (a) torque RMSE and (b) computation time.</td><td>10</td><td>$main(i_1)$ <br> $i_1 = 10$</td></tr>
 
