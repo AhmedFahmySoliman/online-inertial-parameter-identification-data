@@ -1,155 +1,165 @@
 function main(i1, i2, i3)
-    % Clear environment only when run as a script
-    if nargin < 1
+
+rootDir = fileparts(mfilename('fullpath'));
+addpath(fullfile(rootDir,'SupplementaryResults'));
+
+if nargin < 1
+    return;
+end
+
+clc; close all;
+
+%% One input
+if nargin == 1
+
+    if isequal(i1,0)
+        return;
+
+    elseif ismember(i1,[1 2 6])
+        disp(['Figure ' num2str(i1) ' is not plotted data']);
+        return;
+
+    elseif ismember(i1,[3 4 8 10])
+        run(['Figure',num2str(i1)])
+        return;
+
+    else
+        disp('Invalid input argument. Please check the README.');
         return;
     end
-    clc; close all;
+end
 
-    if nargin == 1
-        if (i1 == 0)
-            return;
-        elseif (i1 == 1 || i1 == 2 || i1 == 6)
-            disp(['Figure ' num2str(i1) ' is not a plotted data']);
-            return;
-        elseif (i1 == 3 || i1 == 4 || i1 == 8 || i1 == 10)
-            run(['Figure',num2str(i1)])
-        else
-            disp(['Invalid input argument: ' num2str(i1) '. Please check the README ("Figures Description" section) ']);
+%% Two inputs
+if nargin == 2
+
+    if isequal(i1,7)
+
+        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 4
+            disp('Experiment index should be an integer within 1 and 4.');
             return;
         end
-    end
 
-    if nargin == 2
-        if (i1 == 7)
-            if (length(i2) ~= 1)
-                disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
-                return;
-            end
+        Figure7(i2);
+        return;
 
-            if (i2>30 || i2(1)<1)
-                disp([' Experiment index should be integer values within 1 and 30']);
-                return;
-            end
+    elseif strcmp(i1,'1S')
 
-            if (isIntegerValue(i2(1)) && isIntegerValue(i2(2)))
-            Figure7(i2);
-            else
-            disp([' Model indeces should be integer values']);
-                return;
-            end
-        
-        elseif (i1 == 8)
-            if (length(i2) ~= 4)
-                disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
-                return;
-            end
+        if numel(i2) ~= 2 || any(i2 < 1) || any(i2 > 12) || ~all(arrayfun(@isIntegerValue,i2))
+            disp('Model indices should be integer values within 1 and 12.');
+            return;
+        end
 
-            for i=1:4
-                if (i2(i)>12 || i2(i)<1 )
-                    disp([' Model indeces should be integer values within 1 and 12']);
-                    return;
-                end
-            end
+        Figure1S(i2);
+        return;
 
-            if (isIntegerValue(i2(1)) && isIntegerValue(i2(2))  && isIntegerValue(i2(3))  && isIntegerValue(i2(4)))
-                Figure8(i2);
-            else
-                disp([' Model indeces should be integer values']);
-                return;
-            end
-        
+    elseif strcmp(i1,'2S')
 
-        elseif (i1 == 11)
+        if numel(i2) ~= 4 || any(i2 < 1) || any(i2 > 12) || ~all(arrayfun(@isIntegerValue,i2))
+            disp('Model indices should be integer values within 1 and 12.');
+            return;
+        end
+
+        Figure2S(i2);
+        return;
+
+        elseif strcmp(i1,'4S')
             if (length(i2) ~= 1)
                 disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
                 return;
             end
             if (ismember(i2,1:12))
-                Figure11(i2);
+                 Figure4S(i2);
             else
                 disp([' Model indeces should be integer values less than 13 and greater than 0']);
                 return;
             end
-        
-
-        elseif (i1 == 14)
+          elseif strcmp(i1,'5S')
             if (length(i2) ~= 1)
                 disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
                 return;
             end
-            if (ismember(i2,1:30))
-                Figure14(i2);
+            if (ismember(i2,1:4))
+                Figure5S(i2);
             else
-                disp(['Please enter integer number 1:30 indicating experiment index']); 
+                disp(['Please enter experiment indexes number from 1 to 4']); 
                 return;
-            end
-        
-
-        elseif (i1 == 17)
+            end  
+            elseif strcmp(i1,'6S')
             if (length(i2) ~= 1)
                 disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
                 return;
             end
-            if (ismember(i2,3:4))
-                Figure17(i2);
+            if (ismember(i2,1:4))
+                Figure6S(i2);
             else
-                disp(['Please enter either the number 3 or 4 to indicate the desired squatting displacement in cm']); 
+                disp(['Please enter experiment indexes number from 1 to 4']); 
                 return;
             end
-        
-    
-        elseif (i1 == 18)
-            if (length(i2) ~= 1)
-                disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
-                return;
-            end
-            if (ismember(i2,3:4))
-                Figure18(i2);
-            else
-                disp(['Please enter either the number 3 or 4 to indicate the desired squatting displacement in cm']); 
-                return;
-            end
-        
-        else
-            disp(['Invalid second input argument. Please check the README ("Figures Description" section) ']);
-        end
+    else
+        disp('Invalid input argument. Please check the README.');
+        return;
     end
+end
 
-    if nargin == 3
+%% Three inputs
+if nargin == 3
+
     velocity_vector = [80 90 100 110 120 130];
-        if (i1 == 9)
-            if (length(i2) ~= 1 || length(i3) ~= 2)
-                disp(['Invalid input argument. Please check the README ("Figures Description" section) ']);
-                return;
-            end
-            if (i2>12 || i2<1)
-                disp([' Model indeces should be integer values within 1 and 12']);
-                return;
-            end
-            if (ismember(i3(1),velocity_vector) && ismember(i3(2),velocity_vector) )
-                Figure9(i2, i3);
-            else
-                disp(['Velocity vector elements should be a member of the velocity vector [80 90 100 110 120 130] mm/s']);
-                return;
-            end    
+
+    if isequal(i1,5)
+
+        if numel(i2) ~= 1 || numel(i3) ~= 2
+            disp('Invalid input argument. Please check the README.');
+            return;
         end
 
-        if (i1 == 10)
-            if (length(i2) ~= 1 || length(i3) ~= 1)
-                disp(['Invalid input argument. Please check the README ("Figures Description" section) ']);
-                return;
-            end
-            if (i2>12 || i2<1)
-                disp([' Model indeces should be integer values within 1 and 12']);
-                return;
-            end
-            if (ismember(i3,velocity_vector))
-                Figure10(i2, i3);
-            else
-                disp(['Velocity vector elements should be a member of the velocity vector [80 90 100 110 120 130] mm/s']);
-                return;
-            end 
+        if ~isIntegerValue(i2) || i2 < 1 || i2 > 12
+            disp('Model index should be an integer within 1 and 12.');
+            return;
         end
+
+        if all(ismember(i3,velocity_vector))
+            Figure5(i2,i3);
+            return;
+        else
+            disp('Velocity values should be selected from [80 90 100 110 120 130] mm/s.');
+            return;
+        end
+
+    elseif isequal(i1,9)
+
+        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 4
+            disp('Experiment index should be an integer within 1 and 4.');
+            return;
+        end
+
+        Figure9(i2);
+        return;
+
+    elseif strcmp(i1,'3S')
+
+        if numel(i2) ~= 1 || numel(i3) ~= 1
+            disp('Invalid input argument. Please check the README.');
+            return;
+        end
+
+        if ~isIntegerValue(i2) || i2 < 1 || i2 > 12
+            disp('Model index should be an integer within 1 and 12.');
+            return;
+        end
+
+        if ~isIntegerValue(i3) || ~ismember(i3,velocity_vector)
+            disp('Velocity should be selected from [80 90 100 110 120 130] mm/s.');
+            return;
+        end
+
+        Figure3S(i2,i3);
+        return;
+
+    else
+        disp('Invalid input argument. Please check the README.');
+        return;
     end
+end
 
 end

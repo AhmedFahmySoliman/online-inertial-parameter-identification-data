@@ -97,7 +97,6 @@ yyaxis left
 ax = gca;
 ax.YColor = 'k';
 p2 = plot(Time(1:end-1),m_h_avg(:,1),'color',[0,0.6,0], 'LineStyle','-', 'Marker', 'none','LineWidth',1);
-% [ax p1 p2] = plotyy(t(1:end-1),m_fb_avg(:,1),'color','r',t(1:end-1),m_h_avg(:,1),'color',[0,0.6,0]);
 p3 = plot(Time(1:end-1),m_th_avg(:,1),'b', 'LineStyle','-', 'Marker', 'none','LineWidth',1);
 p4 = plot(Time(1:end-1),m_sh_avg(:,1),'k', 'LineStyle','-', 'Marker', 'none','LineWidth',1);
 p5 = plot(Time(1:end-1),m_f_avg(:,1),'color',[0.6,0.5,0.05], 'LineStyle','-', 'Marker', 'none','LineWidth',1);grid on, grid minor, box on
@@ -106,7 +105,6 @@ legend([p1 p2 p3 p4 p5],{'m_{fb}','m_h','m_{th}','m_{sh}','m_f'},'NumColumns',5)
 xlim([0.35 15]), ylim([0 35])
 set(gca,'FontName', 'Times New Roman','FontSize', 12,'LineWidth',1)
 hold off
-
 
 print(gcf, fullfile('../results', 'Figure4S.png'), '-dpng','-r300');
 

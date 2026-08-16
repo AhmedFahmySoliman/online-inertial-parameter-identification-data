@@ -42,16 +42,6 @@ if nargin == 2
         Figure7(i2);
         return;
 
-    elseif isequal(i1,9)
-
-        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 4
-            disp('Experiment index should be an integer within 1 and 4.');
-            return;
-        end
-
-        Figure9(i2);
-        return;
-
     elseif strcmp(i1,'1S')
 
         if numel(i2) ~= 2 || any(i2 < 1) || any(i2 > 12) || ~all(arrayfun(@isIntegerValue,i2))
@@ -135,6 +125,21 @@ if nargin == 3
             disp('Velocity values should be selected from [80 90 100 110 120 130] mm/s.');
             return;
         end
+
+    elseif isequal(i1,9)
+
+        if numel(i2) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 4
+            disp('Experiment index should be an integer within 1 and 4.');
+            return;
+        end
+
+        if numel(i3) ~= 1 || ~isIntegerValue(i2) || i2 < 1 || i2 > 12
+            disp('Model index should be an integer within 1 and 12.');
+            return;
+        end
+
+        Figure9(i2,i3);
+        return;
 
     elseif strcmp(i1,'3S')
 
