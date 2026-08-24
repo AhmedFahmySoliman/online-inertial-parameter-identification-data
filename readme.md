@@ -2,7 +2,7 @@
 <html lang="en">
 
 <h2>Code Capsule: Inertial Parameter Identification Experiments</h2>
-<h3>Author information has been removed for double-blind peer review.</h3>
+<h3>Ahmed Fahmy Soliman, Patrick M. Wensing, and Barkan Ugurlu</h3>
 <hr>
 <h3>General Information</h3>
 <p>This repository reproduces the results and plots reported in the corresponding paper. The project involves generating curves from a set of simulation and hardware experiments to verify the feasibility of a proposed online inertial parameter identification algorithm.</p>
