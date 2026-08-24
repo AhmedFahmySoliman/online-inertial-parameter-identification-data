@@ -295,15 +295,18 @@ and <code>{1,2,3,4}</code> denotes the representative hardware experiment index.
 
 <p>
 <b>Ahmed Fahmy Soliman</b><br>
-Robotics and Artificial Intelligence Collaboration (RAICo), The University of Manchester, United Kingdom
+Robotics and Artificial Intelligence Collaboration (RAICo), The University of Manchester, United Kingdom<br>
+Email: ahmed.soliman@manchester.ac.uk
 </p>
 
 <p>
 <b>Patrick M. Wensing</b><br>
-Department of Aerospace and Mechanical Engineering, University of Notre Dame, USA
+Department of Aerospace and Mechanical Engineering, University of Notre Dame, USA<br>
+Email: pwensing@nd.edu
 </p>
 
 <p>
 <b>Barkan Ugurlu</b><br>
-Department of Mechanical Engineering, Özyeğin University, Türkiye
+Department of Mechanical Engineering, Özyeğin University, Türkiye<br>
+Email: barkan.ugurlu@ozyegin.edu.tr
 </p>
