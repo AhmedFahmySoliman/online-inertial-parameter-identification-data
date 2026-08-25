@@ -21,7 +21,7 @@ Accepted for publication in <i>IEEE Transactions on Automation Science and Engin
 <h3>General Information</h3>
 
 <p>
-This repository provides the code and experimental data used to reproduce the results and figures reported in the paper. The study evaluates an online inertial parameter identification framework using both simulation and hardware experiments with a lower-body exoskeleton.
+This repository provides the code and experimental data used to reproduce the results and figures reported in the paper. The study evaluates an online inertial parameter identification framework using both simulation and hardware experiments with a lower-body exoskeleton. For detailed descriptions of the identification framework, algorithms, and experimental methodology, readers are referred to the corresponding paper.
 </p>
 
 <h3>Simulation Experiments</h3>
