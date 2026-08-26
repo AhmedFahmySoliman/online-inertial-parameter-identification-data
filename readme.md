@@ -54,7 +54,7 @@ Figure 1: Left: Joint configuration of the bipedal exoskeleton and keyframe defi
 </div>
 
 <p>
-The simulation was performed 72 times using 12 different anthropomorphic subjects, each performing forward walking at six different velocities (80, 90, 100, 110, 120, and 130 mm/s). The anthropometric data for the simulated subjects are provided in Table 1. The exoskeleton mass is approximately 40 kg.
+The simulation experiments use 12 anthropomorphic human–robot coupled models performing dynamic forward-walking motions to evaluate the identification framework under different simulation conditions. For the broader evaluation of the proposed identification algorithm presented in the Supplementary Material, 72 simulation runs were conducted using the 12 human–robot coupled models, with each model evaluated at six walking velocities (80, 90, 100, 110, 120, and 130 mm/s). The anthropometric data for the simulated models are provided in Table 1. The exoskeleton mass is approximately 40 kg.
 </p>
 
 <table border="1" cellpadding="10" cellspacing="0">
@@ -90,7 +90,7 @@ The simulation was performed 72 times using 12 different anthropomorphic subject
 <h3>Hardware Experiments</h3>
 
 <p>
-The proposed identification algorithm is experimentally evaluated using the in-house-developed bipedal exoskeleton with an integrated passive dummy manikin (Figure 2). The exoskeleton is equipped with eight series elastic actuators at the active joints, each with two encoders for measuring angular displacement and spring deflection. Force-sensitive resistors (FSRs) are installed on each foot sole to measure ground reaction forces, while an inertial measurement unit (IMU) located at the pelvis measures angular velocity and linear acceleration.
+The proposed identification algorithm is experimentally evaluated using the in-house-developed bipedal exoskeleton with an integrated passive dummy manikin (Figure 2). Three dummy configurations with different inertial properties and two representative motion patterns, squatting and swaying, were considered. A total of 30 hardware experiments were conducted for each identification method across these configurations and motion patterns. The exoskeleton is equipped with eight series elastic actuators at the active joints, each with two encoders for measuring angular displacement and spring deflection. Force-sensitive resistors (FSRs) are installed on each foot sole to measure ground reaction forces, while an inertial measurement unit (IMU) located at the pelvis measures angular velocity and linear acceleration.
 </p>
 
 <div style="text-align: center;">
